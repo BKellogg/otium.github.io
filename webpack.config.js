@@ -5,11 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
     entry: path.join(__dirname, 'src/js/main.jsx'),
     output: {
-        path: path.join(__dirname, 'build/assets'),
         filename: '[name].js',
         publicPath: '/assets/'
     },
-    devtool: 'cheap-eval-source-map',
     module: {
         loaders: [{
             test: /\.jsx$/,
@@ -50,14 +48,10 @@ const config = {
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            React: 'react',
-        }),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'body',
-            filename: path.join(__dirname,'build/index.html')
+            filename: '../index.html'
         })
     ],
     'markdown-it': {
