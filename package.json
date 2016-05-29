@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev-server": "webpack-dev-server --content-base build"
+    "dev-server": "webpack-dev-server --content-base build",
+    "clean": "rm -rf build/**",
+    "publish": "git subtree push --prefix=build origin master"
   },
   "repository": {
     "type": "git",

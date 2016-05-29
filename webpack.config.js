@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
     entry: path.join(__dirname, 'src/js/main.jsx'),
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, 'build/assets'),
         filename: '[name].js',
         publicPath: '/assets/'
     },
@@ -57,7 +57,7 @@ const config = {
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'body',
-            filename: 'index.html'
+            filename: path.join(__dirname,'build/index.html')
         })
     ],
     'markdown-it': {
