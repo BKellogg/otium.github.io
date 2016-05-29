@@ -48,6 +48,10 @@ const config = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            React: 'react',
+        }),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'body',
