@@ -13,12 +13,12 @@ const config = {
             test: /\.jsx$/,
             loader: 'babel',
             query: {
-                presets: ['react']
+                presets: ['react', 'es2015-native-modules']
             },
             include: path.join(__dirname, 'src')
         }, {
             test: /\.scss$/,
-            loader: 'style/useable!css?root=' + path.join(__dirname, 'src') + '!sass'
+            loader: 'style!css?root=' + path.join(__dirname, 'src') + '!sass'
         }, {
             test: /\.(svg|woff2?|ttf|eot)$/,
             loader: 'url',
@@ -34,9 +34,6 @@ const config = {
         }, {
             test: /\.(png|jpg)$/,
             loader: "file-loader"
-        }, {
-            test: /bootstrap-sass\/assets\/javascripts\//,
-            loader: 'imports?jQuery=jquery'
         }]
     },
     resolve: {
