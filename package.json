@@ -9,7 +9,7 @@
         "build-dev": "webpack --config webpack.dev.config.js",
         "dev-server": "webpack-dev-server --content-base build-dev --config webpack.dev.config.js",
         "clean": "rm -rf build/** build-dev/**",
-        "publish": "git subtree push --prefix=build origin master"
+        "publish": "npm run build && git commit build/** -m 'build' && git subtree push --prefix=build origin master"
     },
     "repository": {
         "type": "git",

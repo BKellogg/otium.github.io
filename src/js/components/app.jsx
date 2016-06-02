@@ -6,7 +6,9 @@ export default class App extends React.Component {
       return (
          <div>
             <Header/>
-            <Grid fluid>{this.props.children}</Grid>
+            <Grid fluid>
+               {this.props.children}
+            </Grid>
          </div>
       );
    }

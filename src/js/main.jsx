@@ -7,7 +7,12 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 function main() {
    let routes = (
       <Router history={browserHistory}>
-         <Route path="/" component={App}></Route>
+         <Route path="/" component={App}>
+            <IndexRoute/>
+            <Route path="/projects"/>
+            <Route path="/blog"/>
+            <Route path="/about"/>
+         </Route>
       </Router>
    )
    ReactDOM.render(routes, document.getElementById('app-container'));
